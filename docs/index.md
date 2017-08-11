@@ -1,4 +1,4 @@
-# So you want your own private cloud hello?
+# So you want your own private cloud?
 
 There are two main tracks you can explore in these tutorials. There is also code available at [https://github.com/mrgeoffrich/learn-openstack-scripts](https://github.com/mrgeoffrich/learn-openstack-scripts) which this tutorial will use to automate as many of the steps as possible.
 

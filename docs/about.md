@@ -4,7 +4,7 @@ Developed and maintained by Geoff Rich <geoff.rich@gmail.com>
 
 ## Making changes
 
-I will eventually have all the documentation and scripts up on github for anyone to look at. I'm currently working off my own internal gitlab server, which also does my mkdocs builds and publish, so it will take me some time to migrate this into github as I may need to remove any sensitive information from the source and set up a new build pipeline using travis ci or something similar.
+All the markdown source for this website can be found at [github.com/mrgeoffrich/learn-openstack-scripts](https://github.com/mrgeoffrich/learn-openstack-website).
 
 ## Tracking work
 
