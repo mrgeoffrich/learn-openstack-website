@@ -3,17 +3,18 @@ jobs:
   build:
     docker:
       - image: mrgeoffrich/mkdocs-azure-build:latest
-      
     working_directory: ~/repo
-
     steps:
       - checkout
-
       - run:
           name: run mkdocs build
           command: |
             mkdocs build
-
-      - store_artifacts:
-          path: site
-          destination: site
+      - deploy:
+          name: Deploy to Azure blob storage if branch is master
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              az storage blob upload-batch -d learnopenstack -s /root/repo/site --connection-string "${CONNECTION_STRING}" --account-name somemorestorage
+            else
+              echo "Not master branch so not deploying"
+            fi

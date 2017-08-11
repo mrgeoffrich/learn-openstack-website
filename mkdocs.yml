@@ -1,5 +1,5 @@
 site_name: Learn Openstack
-site_url: http://learnopenstack.info
+site_url: https://learnopenstack.info
 google_analytics: ['UA-16039647-4','learnopenstack.info']
 pages:
 - Welcome: index.md
