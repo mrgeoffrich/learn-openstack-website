@@ -1,0 +1,16 @@
+site_name: Learn Openstack
+site_url: http://learnopenstack.info
+google_analytics: ['UA-16039647-4','learnopenstack.info']
+pages:
+- Welcome: index.md
+- Overview: overview.md
+- Prerequisites: localprereq.md
+- Base Image: baseimage.md
+- OpenStack All in One: openstack-single.md
+- Deployment Server: deployserver.md
+- OpenStack Multi Node: multi-node.md
+- Links: links.md
+- About: about.md
+theme: readthedocs
+theme_dir: theme_dir
+extra_css: [extra.css]

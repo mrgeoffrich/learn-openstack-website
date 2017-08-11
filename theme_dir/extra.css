@@ -1,0 +1,27 @@
+.virtualbox {
+    border-radius: 10px;
+    border: 1px solid #2980b9;
+    margin: 20px; 
+    padding: 20px;
+}
+
+.hyperv {
+    border-radius: 10px;
+    border: 1px solid  #b92980;
+    margin: 20px; 
+    padding: 20px;
+}
+
+.fusion {
+    border-radius: 10px;
+    border: 1px solid #29b980;
+    margin: 20px; 
+    padding: 20px;
+}
+
+.novisor {
+    border-radius: 10px;
+    border: 1px solid #000000;
+    margin: 20px; 
+    padding: 20px;
+}

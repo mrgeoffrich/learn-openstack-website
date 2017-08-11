@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+<script id="dsq-count-scr" src="//learnopenstack.disqus.com/count.js" async></script>
+<script>
+    function setCookie(key, value) {
+        var expires = new Date();
+        expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
+        document.cookie = key + '=' + value + ';path=/;expires=' + expires.toUTCString();
+    }
+
+    function getCookie(key) {
+        var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+        return keyValue ? keyValue[2] : null;
+    }
+
+    function setVirtualBox() {
+        $('.hyperv').hide();
+        $('.fusion').hide();
+        $('.novisor').hide();
+        $('.virtualbox').show();
+    }
+
+    function setFusion() {
+        $('.hyperv').hide();
+        $('.virtualbox').hide();
+        $('.novisor').hide();
+        $('.fusion').show();
+    }
+
+    function setHyperv() {
+        $('.virtualbox').hide();
+        $('.fusion').hide();
+        $('.novisor').hide();
+        $('.hyperv').show();
+    }
+
+    function setNovisor() {
+        $('.virtualbox').hide();
+        $('.fusion').hide();
+        $('.hyperv').hide();
+        $('.novisor').show();
+    }
+
+    $( document ).ready(function() {
+        var dropDownText = `<select id='selecthypervisor'> \
+  <option value="novisor">Nothing</option> \
+  <option value="virtualbox">VirtualBox</option> \
+  <option value="fusion">VMware Fusion</option> \
+  <option value="hyperv">Hyper-V</option> \
+</select>`;
+
+        var hypervisorCookieName = 'hypervisor';
+
+        $('li.wy-breadcrumbs-aside:first').html('Hypervisor: ' + dropDownText);
+        $('#selecthypervisor').change(function () {
+            var dropdownValue = this.value;
+            if (dropdownValue === 'virtualbox') {
+                setVirtualBox();
+            } else if (dropdownValue === 'fusion') {
+                setFusion();
+            } else if (dropdownValue === 'hyperv') {
+                setHyperv();
+            } else if (dropdownValue === 'novisor') {
+                setNovisor();
+            }
+            setCookie(hypervisorCookieName, dropdownValue);
+        });
+        var hypervisorCookie = getCookie(hypervisorCookieName);
+        if (hypervisorCookie === 'virtualbox') {
+            $('#selecthypervisor').val('virtualbox');
+            setVirtualBox();
+        } else if (hypervisorCookie === 'fusion') {
+            setFusion();
+            $('#selecthypervisor').val('fusion');
+        } else if (hypervisorCookie === 'hyperv') {
+            setHyperv();
+            $('#selecthypervisor').val('hyperv');
+        } else {
+            setNovisor();
+            $('#selecthypervisor').val('novisor');
+        }
+    });
+</script>
+{% endblock %}
