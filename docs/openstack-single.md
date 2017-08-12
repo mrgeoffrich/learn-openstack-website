@@ -6,6 +6,12 @@ This is a great place to start with OpenStack as it keeps the deployment relativ
 
 Ensure that you have already done the steps to [Install prerequisites](localprereq.md) and [Set up a Base Image](baseimage.md).
 
+## YouTube Video
+
+This tutorial is now also available as a YouTube video to watch that focuses on the VirtualBox solution. You can follow this along with the steps below.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uN9D9uXk4oA?ecver=1" frameborder="0" allowfullscreen></iframe>
+
 ## Create the all in one target server
 
 We can now run another packer build, which will take the base image and make some more changes to it.
@@ -127,8 +133,6 @@ You will also need to turn on password authentication for SSH. Using `sudo nano 
 
 Now restart the ssh deamon by typing `systemctl restart sshd`.
 
-Now from your development machine, SSH in using the username and password vagrant/vagrant. Say the IP is 192.168.0.50, type `ssh vagrant@192.168.0.50` and use vagrant as the password.
-
 ### Dashboard
 
 Next step is to access the dashboard, and you can explore openstack via "Horizon" which is the name of the dashboard website in OpenStack.
@@ -141,7 +145,7 @@ You will notice the user_secrets.yml file contains all the passwords generated f
 
 Now browse to https://allinone or https://192.168.0.50 (where you put in the proper IP address there) to get to the dashboard.
 
-Now that you have the dashboard open and have logged in, lets provision a server and get it working!
+Now that you have the dashboard open log in as the user "demo". Now lets provision a server and get it working!
 
 ### One more Network Setting
 
