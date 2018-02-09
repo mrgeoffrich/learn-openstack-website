@@ -53,6 +53,7 @@
         var hypervisorCookieName = 'hypervisor';
 
         $('li.wy-breadcrumbs-aside:first').html('Hypervisor: ' + dropDownText);
+        $('li.wy-breadcrumbs-aside:first').attr('style','display: block');
         $('#selecthypervisor').change(function () {
             var dropdownValue = this.value;
             if (dropdownValue === 'virtualbox') {
